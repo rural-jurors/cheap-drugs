@@ -1,3 +1,4 @@
+let request = require("request")
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -9,12 +10,11 @@ module.exports = function (app) {
     // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
     // ---------------------------------------------------------------------------
 
-    app.get("/api/drugs/:drugName", function (req, res) {
-        console.log("the drugname is: " + req.params.drugName);
-    });
-
-    app.get("/api/location/:zipCode", function (req, res) {
-        console.log("the drugname is: " + req.params.zipCode);
+    app.get("/api/drugs/:drugName&:zipCode", function (req, res) {
+        let openFDAEndpoint = "https://api.fda.gov/drug/label.json";
+        request.get({url: openFDAEndpoint, qs:{"search": `description:${req.params.drugName}`}}, function(err, response){
+            res.json(JSON.parse(response.body));
+        })
     });
 
     // API POST Requests

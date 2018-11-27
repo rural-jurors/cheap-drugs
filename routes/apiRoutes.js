@@ -17,19 +17,34 @@ module.exports = function (app) {
             'sort': "newest"
         };
 
+        let googlePlacesEndpoints = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+        let googleSearch = {
+            'query': `pharmacy+in+${req.params.zipCode}`,
+            'key': 'AIzaSyCCA0sUX96T-YLkyp-8drXHTMMLy10Lynw'
+        }
+
         Promise.all([request.get({
                 url: openFDAEndpoint,
                 qs: openFDASearch
             }), request.get({
                 url: nytEndpoint,
                 qs: nytSearch
+            }), request.get({
+                url: googlePlacesEndpoints,
+                qs: googleSearch
             })])
-            .then(([openFDAResponse, nytResponse]) => {
+            .then(([openFDAResponse, nytResponse, googleResponse]) => {
                 let obj = {
                     openFDA: JSON.parse(openFDAResponse),
-                    nyt: JSON.parse(nytResponse)
+                    nyt: JSON.parse(nytResponse),
+                    google: JSON.parse(googleResponse)
                 };
                 res.json(obj);
+            })
+            .catch((openFDAError, nytError, googleError) => {
+                res.json(openFDAError);
+                res.json(nytError);
+                res.json(googleError);
             });
     });
 

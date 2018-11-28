@@ -31,6 +31,7 @@ function updatePage(NYTData) {
     // Loop through and build elements for the defined number of articles
     for (var i = 0; i < numArticles; i++) {
         // Get specific article info for current index
+        console.log("begin loop");
         var article = NYTData.response.docs[i];
 
         // Increase the articleCount (track article # - starting at 1)

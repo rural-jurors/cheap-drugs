@@ -1,242 +1,168 @@
-<!DOCTYPE html> <!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="assets/drug-icon.png" />
-    <title>Cheap Drugs</title>
 
-    <!-- CSS -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Bungee"
-      rel="stylesheet"
-    />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/drug-icon.png" />
+  <title>Cheap Drugs</title>
 
-    <link
-      href="css/materialize.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <link
-      href="css/style.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet" />
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"
-    ></script>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="js/homepage.js"></script>
-  </head>
-  <body>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="profile.html">My Profile</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-    </ul>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 
-    <nav>
-      <div class="nav-wrapper indigo darken-4">
-        <a href="home.html">
-          <img
-            src="assets/drug-icon.png"
-            alt="Nav Bar Icon"
-            width="40px"
-            height="40px"
-            id="drugIcon"
-        /></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <a href="login.html" class="white-text"
-              ><i class="material-icons">account_circle</i></a
-            >
-          </li>
-          <li>
-            <a
-              class="dropdown-trigger white-text"
-              href="#!"
-              data-target="dropdown1"
-              >Options<i class="material-icons right">arrow_drop_down</i></a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+</head>
 
-    <div class="bannerBorder">
-      <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <br /><br />
-            <h1 class="header center indigo-text text-darken-4">Cheap Drugs</h1>
-            <div class="row center">
-              <h5 class="header col s12 indigo-text text-darken-4">
-                A drug cost comparison and pharmacy location app
-              </h5>
-            </div>
-            <br />
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12 white searchEntry">
-                    <input id="search" type="text" required />
-                    <label for="search">Enter Your Prescription</label>
-                  </div>
+<body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="profile.html">My Profile</a></li>
+    <li><a href="aboutus.html">About Us</a></li>
+  </ul>
 
-                  <div class="input-field col s12 white searchEntry">
-                    <input id="zip" type="text" required pattern="[0-9]{5}" />
-                    <label for="zip">Enter Your Zip Code</label>
-                  </div>
-
-                  <div class="input-field col s12">
-                    <button
-                      class="btn waves-effect waves-light"
-                      type="submit"
-                      name="action"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <br />
-          </div>
-        </div>
-        <div class="parallax">
-          <img
-            src="assets/pills.jpg"
-            alt="Unsplashed background img 1"
-            id="pillBackground"
-          />
-        </div>
-      </div>
+  <nav>
+    <div class="nav-wrapper indigo darken-4">
+      <a href="home.html">
+        <img src="assets/drug-icon.png" alt="Nav Bar Icon" width="40px" height="40px" id="drugIcon" /></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="login.html" class="white-text"><i class="material-icons">account_circle</i></a>
+        </li>
+        <li>
+          <a class="dropdown-trigger white-text" href="#!" data-target="dropdown1">Options<i class="material-icons right">arrow_drop_down</i></a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="container">
-      <div class="section">
-        <!-- Icon Section -->
-        <div class="row">
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">rss_feed</i>
-              </h2>
-              <h5 class="center">Information Feed</h5>
-
-              <p class="light">
-                We did most of the heavy lifting for you to provide a default
-                stylings that incorporate our custom components. Additionally,
-                we refined animations and transitions to provide a smoother
-                experience for developers.
-              </p>
-            </div>
-          </div>
-
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">group</i>
-              </h2>
-              <h5 class="center">User Experience Focused</h5>
-
-              <p class="light">
-                By utilizing elements and principles of Material Design, we were
-                able to create a framework that incorporates components and
-                animations that provide more feedback to users. Additionally, a
-                single underlying responsive system across all platforms allow
-                for a more unified user experience.
-              </p>
-            </div>
-          </div>
-
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">map</i>
-              </h2>
-              <h5 class="center">Heat Map</h5>
-
-              <p class="light">
-                We have provided detailed documentation as well as specific code
-                examples to help new users get started. We are also always open
-                to feedback and can answer any questions a user may have about
-                Materialize.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="parallax-container valign-wrapper">
+  <div class="bannerBorder">
+    <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
         <div class="container">
+          <br /><br />
+          <h1 class="header center indigo-text text-darken-4">Cheap Drugs</h1>
           <div class="row center">
-            <h5 class="header col s12 light">
-              A modern responsive front-end framework based on Material Design
+            <h5 class="header col s12 indigo-text text-darken-4">
+              A drug cost comparison and pharmacy location app
             </h5>
           </div>
+          <br />
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12 white searchEntry">
+                  <input id="search" type="text" required />
+                  <label for="search">Enter Your Prescription</label>
+                </div>
+
+                <div class="input-field col s12 white searchEntry">
+                  <input id="zip" type="text" required pattern="[0-9]{5}" />
+                  <label for="zip">Enter Your Zip Code</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <br />
         </div>
       </div>
       <div class="parallax">
-        <img src="background2.jpg" alt="Unsplashed background img 2" />
+        <img src="assets/pills.jpg" alt="Unsplashed background img 1" id="pillBackground" />
       </div>
     </div>
+  </div>
 
-    <footer class="page-footer teal">
+  <div class="container">
+    <div class="section">
+      <!-- Icon Section -->
+      <div class="row">
+<!-- THIS NEEDS TO BE RESPONSIVE -->
+        <div class="icon-block">
+          <h2 class="center brown-text">
+            <i class="material-icons">rss_feed</i>
+          </h2>
+          <h5 class="center">Information Feed</h5>
+          <!-- list -->
+          <div class="holder" id="article-section">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Company Bio</h5>
-            <p class="grey-text text-lighten-4">
-              We are a team of college students working on this project like
-              it's our full time job. Any amount would help support and continue
-              development on this project and is greatly appreciated.
-            </p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
+        <div class="row center">
+          <h5 class="header col s12 light">
+            A modern responsive front-end framework based on Material Design
+          </h5>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          Made by
-          <a class="brown-text text-lighten-3" href="http://materializecss.com"
-            >Materialize</a
-          >
-        </div>
-      </div>
-    </footer>
+    </div>
+    <div class="parallax">
+      <img src="background2.jpg" alt="Unsplashed background img 2" />
+    </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-  </body>
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">
+            We are a team of college students working on this project like
+            it's our full time job. Any amount would help support and continue
+            development on this project and is greatly appreciated.
+          </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul.browser-defualt>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul.browser-defualt>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by
+        <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/homepage.js"></script>
+  <script src="js/news.js"></script>
+
+</body>
+
 </html>

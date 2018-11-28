@@ -1,4 +1,4 @@
-/* scroller CSS */
+/* scroller CSS
 
 .holder { 
   background-color:white; 
@@ -29,6 +29,32 @@
 .holder ul li a {
   color:blue;
   text-decoration:none;
-}
+} 
 
 /* end of scroller CSS */
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+	/* width: 45em;
+	height: 10em; */
+}
+
+.box {
+	margin: 3em auto;
+	padding: 2em;
+	/* width: 15em;*/
+	height: 250px; 
+	position: relative;
+	overflow: hidden;
+  top: 1em;
+	border: 1px solid black;
+}
+
+.scroll {
+  position: absolute;
+}
+
+.scroll li{
+	list-style: circle;
+}

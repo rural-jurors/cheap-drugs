@@ -1,30 +1,54 @@
+let request = require("request-promise")
 // ===============================================================================
 // ROUTING
 // ===============================================================================
 
 module.exports = function (app) {
     // API GET Requests
-    // Below code handles when users "visit" a page.
-    // In each of the below cases when a user visits a link
-    // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-    // ---------------------------------------------------------------------------
+    app.get("/api/drugs/:drugName&:zipCode", function (req, res) {
+        let openFDAEndpoint = "https://api.fda.gov/drug/label.json";
+        let openFDASearch = {
+            "search": `description:${req.params.drugName}`
+        }
+        let nytEndpoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        let nytSearch = {
+            'api-key': "97b8ee4143194df68c8a1637095f6e03",
+            'q': req.params.drugName,
+            'sort': "newest"
+        };
 
-    app.get("/api/drugs/:drugName", function (req, res) {
-        console.log("the drugname is: " + req.params.drugName);
-    });
+        let googlePlacesEndpoints = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+        let googleSearch = {
+            'query': `pharmacy+in+${req.params.zipCode}`,
+            'key': 'AIzaSyCCA0sUX96T-YLkyp-8drXHTMMLy10Lynw'
+        }
 
-    app.get("/api/location/:zipCode", function (req, res) {
-        console.log("the drugname is: " + req.params.zipCode);
+        Promise.all([request.get({
+                url: openFDAEndpoint,
+                qs: openFDASearch
+            }), request.get({
+                url: nytEndpoint,
+                qs: nytSearch
+            }), request.get({
+                url: googlePlacesEndpoints,
+                qs: googleSearch
+            })])
+            .then(([openFDAResponse, nytResponse, googleResponse]) => {
+                let obj = {
+                    openFDA: JSON.parse(openFDAResponse),
+                    nyt: JSON.parse(nytResponse),
+                    google: JSON.parse(googleResponse)
+                };
+                res.json(obj);
+            })
+            .catch((openFDAError, nytError, googleError) => {
+                res.json(openFDAError);
+                res.json(nytError);
+                res.json(googleError);
+            });
     });
 
     // API POST Requests
-    // Below code handles when a user submits a form and thus submits data to the server.
-    // In each of the below cases, when a user submits form data (a JSON object)
-    // ...the JSON is pushed to the appropriate JavaScript array
-    // (ex. User fills out a reservation request... this data is then sent to the server...
-    // Then the server saves the data to the tableData array)
-    // ---------------------------------------------------------------------------
-
     app.post("/api/signup", function (req, res) {
         console.log(req.body);
         console.log("The user signed up!");

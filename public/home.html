@@ -28,6 +28,21 @@
       rel="stylesheet"
       media="screen,projection"
     />
+
+    <link
+      href="css/results.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
+    <link
+      href="css/scroller.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script
@@ -37,6 +52,8 @@
     ></script>
 
     <script src="js/homepage.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/news.js"></script>
   </head>
   <body>
     <ul id="dropdown1" class="dropdown-content">
@@ -53,6 +70,7 @@
             width="40px"
             height="40px"
             id="drugIcon"
+            style="padding:0px; margin:12px"
         /></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
@@ -99,6 +117,7 @@
 
                   <div class="input-field col s12">
                     <button
+                      id="searchBtn"
                       class="btn waves-effect waves-light"
                       type="submit"
                       name="action"
@@ -122,7 +141,28 @@
       </div>
     </div>
 
+    <!-- News Scroller -->
     <div class="container">
+      <div class="section">
+        <!-- Icon Section -->
+        <div class="row">
+          <div class="icon-block">
+            <h2 class="center brown-text">
+              <i class="material-icons">rss_feed</i>
+            </h2>
+            <h5 class="center">Information Feed</h5>
+            <!-- list -->
+            <div class="holder" id="article-section">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Scroller -->
+
+    <div class="container">
+      <div id="results"></div>
+
       <div class="section">
         <!-- Icon Section -->
         <div class="row">
@@ -178,57 +218,64 @@
       </div>
     </div>
 
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">
-              A modern responsive front-end framework based on Material Design
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="parallax">
-        <img src="background2.jpg" alt="Unsplashed background img 2" />
-      </div>
-    </div>
+    <!-- Map -->
+
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    />
+    <div id="map"></div>
+    <!-- Replace the value of the key parameter with your own API key. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUhV07kpgoZqyw6HBr3lZ7jKp23AAgV-g
+            &libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+
+    <!-- End of Map -->
 
     <footer class="page-footer teal">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Company Bio</h5>
-            <p class="grey-text text-lighten-4">
-              We are a team of college students working on this project like
-              it's our full time job. Any amount would help support and continue
-              development on this project and is greatly appreciated.
+          <div class="col l4 s12">
+            <h5 class="white-text">Motivation</h5>
+            <p class="grey-text text-lighten-4" id="motivation">
+              <strong>Cheap Drugs</strong> serves as a hub for prescription
+              information that is friendly to all users. The tools this site
+              provides empowers the consumer to find pharmacies, affordable
+              pricing, and relevant pharmaceutical news.
             </p>
           </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
+          <div class="col l4 s12">
+            <h5 class="white-text">Features</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li>Search for Prescription Drug Info</li>
+              <li>Compare Costs Internationally</li>
+              <li>Find Low Prices (FamilyWize)</li>
+              <li>Breaking News on Prescriptions</li>
             </ul>
           </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
+          <div class="col l4 s12">
+            <h5 class="white-text">Future Updates</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li>Email Notifications</li>
+              <li>Checking for Prescription Interactions</li>
+              <li>Discounts and Coupons</li>
+              <li>User Search History</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          Made by
-          <a class="brown-text text-lighten-3" href="http://materializecss.com"
-            >Materialize</a
+          Made for the
+          <a
+            class="brown-text text-lighten-3"
+            href="https://techbootcamps.utexas.edu/coding/"
+            >University of Texas Coding Bootcamp</a
           >
         </div>
       </div>
@@ -238,5 +285,6 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/news.js"></script>
   </body>
 </html>

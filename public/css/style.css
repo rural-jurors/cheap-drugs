@@ -11,8 +11,17 @@ nav .brand-logo {
   color: #444;
 }
 
+ul {
+  margin-bottom: 40px;
+  list-style-type:square;
+}
+
 p {
   line-height: 2rem;
+}
+
+#motivation {
+  line-height: 150%;
 }
 
 .sidenav-trigger {

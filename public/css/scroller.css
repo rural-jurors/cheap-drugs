@@ -1,0 +1,60 @@
+/* scroller CSS
+
+.holder { 
+  background-color:white; 
+  border: 1px solid black; 
+  width:1008px;
+  height:250px;
+  overflow:hidden;
+  padding:10px;
+  font-family:Helvetica;
+}
+.holder .mask {
+  position: relative;
+  left: 0px;
+  top: 10px;
+  width:1008px;
+  height:240px;
+  overflow: hidden;
+}
+.holder ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  position: relative;
+}
+.holder ul li {
+  padding:10px 0px;
+}
+.holder ul li a {
+  color:blue;
+  text-decoration:none;
+} 
+
+/* end of scroller CSS */
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+	/* width: 45em;
+	height: 10em; */
+}
+
+.box {
+	margin: 3em auto;
+	padding: 2em;
+	/* width: 15em;*/
+	height: 250px; 
+	position: relative;
+	overflow: hidden;
+  top: 1em;
+	border: 1px solid black;
+}
+
+.scroll {
+  position: absolute;
+}
+
+.scroll li{
+	list-style: circle;
+}

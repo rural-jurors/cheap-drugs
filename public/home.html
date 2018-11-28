@@ -1,6 +1,226 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/drug-icon.png" />
+    <title>Cheap Drugs</title>
+
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee"
+      rel="stylesheet"
+    />
+
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
+    <link
+      href="css/results.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
+    <link
+      href="css/scroller.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/homepage.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/news.js"></script>
+  </head>
+  <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="profile.html">My Profile</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+
+    <nav>
+      <div class="nav-wrapper indigo darken-4">
+        <a href="home.html">
+          <img
+            src="assets/drug-icon.png"
+            alt="Nav Bar Icon"
+            width="40px"
+            height="40px"
+            id="drugIcon"
+            style="padding:0px; margin:12px"
+        /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a href="login.html" class="white-text"
+              ><i class="material-icons">account_circle</i></a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-trigger white-text"
+              href="#!"
+              data-target="dropdown1"
+              >Options<i class="material-icons right">arrow_drop_down</i></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="bannerBorder">
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br /><br />
+            <h1 class="header center indigo-text text-darken-4">Cheap Drugs</h1>
+            <div class="row center">
+              <h5 class="header col s12 indigo-text text-darken-4">
+                A drug cost comparison and pharmacy location app
+              </h5>
+            </div>
+            <br />
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 white searchEntry">
+                    <input id="search" type="text" required />
+                    <label for="search">Enter Your Prescription</label>
+                  </div>
+
+                  <div class="input-field col s12 white searchEntry">
+                    <input id="zip" type="text" required pattern="[0-9]{5}" />
+                    <label for="zip">Enter Your Zip Code</label>
+                  </div>
+
+                  <div class="input-field col s12">
+                    <button
+                      id="searchBtn"
+                      class="btn waves-effect waves-light"
+                      type="submit"
+                      name="action"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <br />
+          </div>
+        </div>
+        <div class="parallax">
+          <img
+            src="assets/pills.jpg"
+            alt="Unsplashed background img 1"
+            id="pillBackground"
+          />
+        </div>
+      </div>
+    </div>
+
+    <h2 id="prescription-name">Sertraline Hydrochloride</h2>
+    <h3 id="manufacturer-name">Proficient Rx LP</h3>
+    <h4 id="generic-name">SERTRALINE HYDROCHLORIDE</h4>
+    <p id="description">DESCRIPTION Sertraline hydrochloride is a selective serotonin reuptake inhibitor (SSRI) for oral administration. It has a molecular weight of 342.7. Sertraline hydrochloride, USP has the following chemical name: (1S-cis)-4-(3,4-dichlorophenyl)-1,2,3,4-tetrahydro-N-methyl-1-naphthalenamine hydrochloride. The empirical formula C17H17NCl2•HCl is represented by the following structural formula: Sertraline hydrochloride, USP is a white crystalline powder that is slightly soluble in water and isopropyl alcohol and sparingly soluble in ethanol. Sertraline tablets, USP are supplied for oral administration as scored tablets containing sertraline hydrochloride equivalent to 25 mg, 50 mg and 100 mg of sertraline and the following inactive ingredients: dibasic calcium phosphate dihydrate, hydroxypropyl cellulose, microcrystalline cellulose, magnesium stearate, opadry green (titanium dioxide, hypromellose 3cP, hypromellose 6cP, Macrogol/Peg 400, Polysorbate 80, D&C Yellow # 10 Aluminum Lake, and FD&C Blue # 2/Indigo Carmine Aluminum Lake for 25mg tablet), opadry light blue (hypromellose 3cP, hypromellose 6cP, titanium dioxide, Macrogol/Peg 400, FD&C Blue # 2/Indigo Carmine Aluminum Lake and Polysorbate 80 for 50 mg tablet), opadry yellow (hypromellose 3cP, hypromellose 6cP, titanium dioxide, Macrogol/Peg 400, Polysorbate 80, Iron Oxide Yellow, Iron oxide Red for 100mg tablet) and sodium starch glycolate. image</p>
+    <p id="warnings">BOXED WARNING Suicidality and Antidepressant Drugs Antidepressants increased the risk compared to placebo of suicidal thinking and behavior (suicidality) in children, adolescents, and young adults in short-term studies of major depressive disorder (MDD) and other psychiatric disorders. Anyone considering the use of Sertraline hydrochloride or any other antidepressant in a child, adolescent, or young adult must balance this risk with the clinical need. Short-term studies did not show an increase in the risk of suicidality with antidepressants compared to placebo in adults beyond age 24; there was a reduction in risk with antidepressants compared to placebo in adults aged 65 and older. Depression and certain other psychiatric disorders are themselves associated with increases in the risk of suicide. Patients of all ages who are started on antidepressant therapy should be monitored appropriately and observed closely for clinical worsening, suicidality, or unusual changes in behavior. Families and caregivers should be advised of the need for close observation and communication with the prescriber. Sertraline hydrochloride tablets are not approved for the treatment of major depressive disorder in pediatric patients. (See WARNINGS:Clinical Worsening and Suicide Risk, PRECAUTIONS:Information for Patients, and PRECAUTIONS:Pediatric Use).</p>
+    <p id="route">ORAL</p>
+
+
+    <!-- News Scroller -->
+    <div class="container">
+      <div class="section">
+        <!-- Icon Section -->
+        <div class="row">
+          <div class="icon-block">
+            <h2 class="center brown-text">
+              <i class="material-icons">rss_feed</i>
+            </h2>
+            <h5 class="center">Information Feed</h5>
+            <!-- list -->
+            <!--
+              <div class="holder article-section" id="article-section">
+                <ul class="empty-list"></ul>
+              </div>
+            -->
+            <div class="wrapper">
+              <!-- Main Container -->
+
+              <div class="box">
+                <!-- Div that will hold the UL -->
+                <div class="scroll"><ol class="empty-list"></ol></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Scroller -->
+
+    <div class="container">
+      <div id="results"></div>
+
+      <div class="section">
+        <!-- Icon Section -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text">
+                <i class="material-icons">rss_feed</i>
+              </h2>
+              <h5 class="center">Information Feed</h5>
+
+              <p class="light">
+                We did most of the heavy lifting for you to provide a default
+                stylings that incorporate our custom components. Additionally,
+                we refined animations and transitions to provide a smoother
+                experience for developers.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text">
+                <i class="material-icons">group</i>
+              </h2>
+              <h5 class="center">User Experience Focused</h5>
+
+              <p class="light">
+                By utilizing elements and principles of Material Design, we were
+                able to create a framework that incorporates components and
+                animations that provide more feedback to users. Additionally, a
+                single underlying responsive system across all platforms allow
+                for a more unified user experience.
+              </p>
+            </div>
+          </div>
+>>>>>>> a5263b602b627a549a42860ea3df18c85c2951e5
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -42,6 +262,7 @@
     </div>
   </nav>
 
+<<<<<<< HEAD
   <div class="bannerBorder">
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
@@ -101,10 +322,31 @@
       </div>
     </div>
   </div>
+=======
+    <!-- Map -->
+
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    />
+    <div id="map"></div>
+    <!-- Replace the value of the key parameter with your own API key. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUhV07kpgoZqyw6HBr3lZ7jKp23AAgV-g
+            &libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+
+    <!-- End of Map -->
+>>>>>>> a5263b602b627a549a42860ea3df18c85c2951e5
 
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
+<<<<<<< HEAD
         <div class="row center">
           <h5 class="header col s12 light">
             A modern responsive front-end framework based on Material Design
@@ -144,9 +386,38 @@
             <li><a class="white-text" href="#!">Link 2</a></li>
             <li><a class="white-text" href="#!">Link 3</a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
+=======
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Motivation</h5>
+            <p class="grey-text text-lighten-4" id="motivation">
+              <strong>Cheap Drugs</strong> serves as a hub for prescription
+              information that is friendly to all users. The tools this site
+              provides empowers the consumer to find pharmacies, affordable
+              pricing, and relevant pharmaceutical news.
+            </p>
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Features</h5>
+            <ul>
+              <li>Search for Prescription Drug Info</li>
+              <li>Compare Costs Internationally</li>
+              <li>Find Low Prices (FamilyWize)</li>
+              <li>Breaking News on Prescriptions</li>
+            </ul>
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Future Updates</h5>
+            <ul>
+              <li>Email Notifications</li>
+              <li>Checking for Prescription Interactions</li>
+              <li>Discounts and Coupons</li>
+              <li>User Search History</li>
+>>>>>>> a5263b602b627a549a42860ea3df18c85c2951e5
             </ul>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
     <div class="footer-copyright">
       <div class="container">
@@ -166,3 +437,24 @@
 </body>
 
 </html>
+=======
+      <div class="footer-copyright">
+        <div class="container">
+          Made for the
+          <a
+            class="brown-text text-lighten-3"
+            href="https://techbootcamps.utexas.edu/coding/"
+            >University of Texas Coding Bootcamp</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/news.js"></script>
+  </body>
+</html>
+>>>>>>> a5263b602b627a549a42860ea3df18c85c2951e5

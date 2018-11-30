@@ -4,6 +4,7 @@ $(document).ready(function() {
   $(".dropdown-trigger").dropdown();
 });
 
+
 // $("#searchBtn").on("click", function(event) {
 //   console.log("Submit was clicked");
 //     var prescription = $("#search").val().trim();

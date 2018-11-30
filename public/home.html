@@ -43,6 +43,13 @@
       media="screen,projection"
     />
 
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"
+      rel="stylesheet"
+      data-semver="3.0.1"
+      data-require="normalize@*"
+    />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script
@@ -51,9 +58,41 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
     <script src="js/homepage.js"></script>
     <script src="js/results.js"></script>
-    <script src="js/news.js"></script>
+    <!-- <script src="js/news.js"></script> -->
+    <style>
+
+      .legend {
+        font-size: 12px;
+      }
+      rect {
+        stroke-width: 2;
+      }
+      #chart {
+        height: 360px;
+        position: relative;
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .tooltip {
+        background: #eee;
+        box-shadow: 0 0 5px #999999;
+        color: #333;
+        display: none;
+        font-size: 12px;
+        left: 130px;
+        padding: 10px;
+        position: absolute;
+        text-align: center;
+        top: 95px;
+        width: 80px;
+        z-index: 10;
+      }
+    </style>
   </head>
   <body>
     <ul id="dropdown1" class="dropdown-content">
@@ -79,6 +118,11 @@
             >
           </li>
           <li>
+              <a href="create_profile.html" class="white-text"
+                >Sign Up</a
+              >
+            </li>
+          <li>
             <a
               class="dropdown-trigger white-text"
               href="#!"
@@ -89,6 +133,38 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="email-input" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" id="email-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="password-input" class="col-form-label">Password</label>
+                            <input type="password" class="form-control" id="password-input">
+                        </div>
+                        <span class="error text-danger"></span>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary login-button">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Login Modal -->
 
     <div class="bannerBorder">
       <div id="index-banner" class="parallax-container">
@@ -119,7 +195,7 @@
                     <button
                       id="searchBtn"
                       class="btn waves-effect waves-light"
-                      type="submit"
+                      type="button"
                       name="action"
                     >
                       Submit
@@ -141,13 +217,16 @@
       </div>
     </div>
 
-    <h2 id="prescription-name">Sertraline Hydrochloride</h2>
-    <h3 id="manufacturer-name">Proficient Rx LP</h3>
-    <h4 id="generic-name">SERTRALINE HYDROCHLORIDE</h4>
-    <p id="description">DESCRIPTION Sertraline hydrochloride is a selective serotonin reuptake inhibitor (SSRI) for oral administration. It has a molecular weight of 342.7. Sertraline hydrochloride, USP has the following chemical name: (1S-cis)-4-(3,4-dichlorophenyl)-1,2,3,4-tetrahydro-N-methyl-1-naphthalenamine hydrochloride. The empirical formula C17H17NCl2•HCl is represented by the following structural formula: Sertraline hydrochloride, USP is a white crystalline powder that is slightly soluble in water and isopropyl alcohol and sparingly soluble in ethanol. Sertraline tablets, USP are supplied for oral administration as scored tablets containing sertraline hydrochloride equivalent to 25 mg, 50 mg and 100 mg of sertraline and the following inactive ingredients: dibasic calcium phosphate dihydrate, hydroxypropyl cellulose, microcrystalline cellulose, magnesium stearate, opadry green (titanium dioxide, hypromellose 3cP, hypromellose 6cP, Macrogol/Peg 400, Polysorbate 80, D&C Yellow # 10 Aluminum Lake, and FD&C Blue # 2/Indigo Carmine Aluminum Lake for 25mg tablet), opadry light blue (hypromellose 3cP, hypromellose 6cP, titanium dioxide, Macrogol/Peg 400, FD&C Blue # 2/Indigo Carmine Aluminum Lake and Polysorbate 80 for 50 mg tablet), opadry yellow (hypromellose 3cP, hypromellose 6cP, titanium dioxide, Macrogol/Peg 400, Polysorbate 80, Iron Oxide Yellow, Iron oxide Red for 100mg tablet) and sodium starch glycolate. image</p>
-    <p id="warnings">BOXED WARNING Suicidality and Antidepressant Drugs Antidepressants increased the risk compared to placebo of suicidal thinking and behavior (suicidality) in children, adolescents, and young adults in short-term studies of major depressive disorder (MDD) and other psychiatric disorders. Anyone considering the use of Sertraline hydrochloride or any other antidepressant in a child, adolescent, or young adult must balance this risk with the clinical need. Short-term studies did not show an increase in the risk of suicidality with antidepressants compared to placebo in adults beyond age 24; there was a reduction in risk with antidepressants compared to placebo in adults aged 65 and older. Depression and certain other psychiatric disorders are themselves associated with increases in the risk of suicide. Patients of all ages who are started on antidepressant therapy should be monitored appropriately and observed closely for clinical worsening, suicidality, or unusual changes in behavior. Families and caregivers should be advised of the need for close observation and communication with the prescriber. Sertraline hydrochloride tablets are not approved for the treatment of major depressive disorder in pediatric patients. (See WARNINGS:Clinical Worsening and Suicide Risk, PRECAUTIONS:Information for Patients, and PRECAUTIONS:Pediatric Use).</p>
-    <p id="route">ORAL</p>
+    <div class="container">
+      <h2 id="prescription-name"></h2>
+      <h3 id="manufacturer-name"></h3>
+      <h4 id="generic-name"></h4>
+      <p id="description"></p>
+      <p id="warnings"></p>
+      <p id="route"></p>
+    </div>
 
+    <div id="chart"></div>
 
     <!-- News Scroller -->
     <div class="container">
@@ -304,6 +383,260 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/news.js"></script>
+    <script src="js/homepage.js"></script>
+    <!-- <script src="js/news.js"></script> -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+      $("#searchBtn").on("click", function(event) {
+        console.log("Submit was clicked");
+        var prescription = $("#search")
+          .val()
+          .trim();
+        var newSearch =
+          $("#search")
+            .val()
+            .trim() +
+          "&" +
+          $("#zip")
+            .val()
+            .trim();
+
+        console.log(newSearch);
+
+        var pName = document.getElementById("prescription-name");
+        pName.innerHTML = prescription;
+
+        $.get("/api/drugs/" + newSearch, function(data) {
+          var mName = document.getElementById("manufacturer-name");
+          var gName = document.getElementById("generic-name");
+          var descrip = document.getElementById("description");
+          var warns = document.getElementById("warnings");
+          var pRoute = document.getElementById("route");
+
+          console.log(data.openFDA.results[0]);
+
+          mNameResult = data.openFDA.results[0].openfda.manufacturer_name;
+          gNameResult = data.openFDA.results[0].openfda.generic_name;
+          descripResult = data.openFDA.results[0].description;
+          warnsResult = data.openFDA.results[0].boxed_warning;
+          pRouteResult = data.openFDA.results[0].openfda.route;
+
+          if (descripResult) {
+            descrip.innerHTML = descripResult;
+          } else {
+            descrip.innerHTML = "Description: Not Available";
+          }
+
+          if (warnsResult) {
+            warns.innerHTML = warnsResult;
+          } else {
+            warns.innerHTML = "Warnings: Not Available";
+          }
+
+          if (gNameResult) {
+            gName.innerHTML = gNameResult;
+          } else {
+            gName.innerHTML = "Generic Name: Not Available";
+          }
+
+          if (mNameResult) {
+            mName.innerHTML = mNameResult;
+          } else {
+            mName.innerHTML = "Manufacturer Name: Not Available";
+          }
+
+          if (pRouteResult) {
+            pRoute.innerHTML = "Route: " + pRouteResult;
+          } else {
+            pRoute.innerHTML = "Route: Not Available";
+          }
+
+          $(".empty-list").empty();
+
+          for (let i = 0; i < 10; i++) {
+            $(".empty-list").append(
+              "<li><a href=" +
+                data.nyt.response.docs[i].web_url +
+                ">" +
+                data.nyt.response.docs[i].snippet +
+                "</a></li>"
+            );
+          }
+
+          var tooltip = d3
+            .select("#chart") // NEW
+            .append("div") // NEW
+            .attr("class", "tooltip"); // NEW
+
+          tooltip
+            .append("div") // NEW
+            .attr("class", "label"); // NEW
+
+          tooltip
+            .append("div") // NEW
+            .attr("class", "count"); // NEW
+
+          tooltip
+            .append("div") // NEW
+            .attr("class", "percent"); // NEW
+
+          d3.csv("prescription_data2.csv", function(error, data2) {
+            if (error) throw error;
+            console.log(data2);
+            let searchResult = 0;
+            for (var i = 0; i < data2.length; i++) {
+              if (data2[i].Prescription === "prescription") {
+                searchResult = i;
+              }
+            }
+
+            console.log(data2[searchResult]);
+
+            var keys = ["USMedicarePrice", "Norway", "England", "Ontario"];
+
+            var donutData = new Array();
+
+            donutData.push({
+              label: "USMedicarePrice",
+              count: data2[searchResult].USMedicarePrice
+            });
+            donutData.push({
+              label: "Norway",
+              count: data2[searchResult].Norway
+            });
+            donutData.push({
+              label: "England",
+              count: data2[searchResult].England
+            });
+            donutData.push({
+              label: "Ontario",
+              count: data2[searchResult].Ontario
+            });
+
+            console.log(donutData);
+
+            var width = 360;
+            var height = 360;
+            var radius = Math.min(width, height) / 2;
+            var donutWidth = 75;
+            var legendRectSize = 18; // NEW
+            var legendSpacing = 4; // NEW
+
+            var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+            var svg = d3
+              .select("#chart")
+              .append("svg")
+              .attr("width", width)
+              .attr("height", height)
+              .append("g")
+              .attr(
+                "transform",
+                "translate(" + width / 2 + "," + height / 2 + ")"
+              );
+
+            var arc = d3
+              .arc()
+              .innerRadius(radius - donutWidth)
+              .outerRadius(radius);
+
+            var pie = d3
+              .pie()
+              .value(function(d) {
+                return d.count;
+              })
+              .sort(null);
+
+            var path = svg
+              .selectAll("path")
+              .data(pie(donutData))
+              .enter()
+              .append("path")
+              .attr("d", arc)
+              .attr("fill", function(d, i) {
+                return color(d.data.label);
+              });
+
+            path.on("mouseover", function(d) {
+              var total = d3.sum(
+                donutData.map(function(d) {
+                  return d.count;
+                })
+              );
+              var percent = Math.round((1000 * d.data.count) / total) / 10;
+              tooltip.select(".label").html(d.data.label);
+              tooltip.select(".count").html("$" + d.data.count);
+              tooltip.style("display", "block"); // NEW
+            }); // NEW
+
+            path.on("mouseout", function(d) {
+              tooltip.style("display", "none"); // NEW
+            });
+
+            path.on("mousemove", function(d) {
+              tooltip
+                .style("top", d3.event.layerY + 10 + "px")
+                .style("left", d3.event.layerX + 10 + "px");
+            });
+
+            var legend = svg
+              .selectAll(".legend") // NEW
+              .data(color.domain()) // NEW
+              .enter() // NEW
+              .append("g") // NEW
+              .attr("class", "legend") // NEW
+              .attr("transform", function(d, i) {
+                // NEW
+                var height = legendRectSize + legendSpacing; // NEW
+                var offset = (height * color.domain().length) / 2; // NEW
+                var horz = -2 * legendRectSize; // NEW
+                var vert = i * height - offset; // NEW
+                return "translate(" + horz + "," + vert + ")"; // NEW
+              }); // NEW
+
+            legend
+              .append("rect") // NEW
+              .attr("width", legendRectSize) // NEW
+              .attr("height", legendRectSize) // NEW
+              .style("fill", color) // NEW
+              .style("stroke", color); // NEW
+
+            legend
+              .append("text") // NEW
+              .attr("x", legendRectSize + legendSpacing) // NEW
+              .attr("y", legendRectSize - legendSpacing) // NEW
+              .text(function(d) {
+                return d;
+              }); // NEW
+          });
+
+          scroller();
+        });
+      });
+
+      function scroller() {
+        var scroll = $("div.scroll"); // Sets the div with a class of scroll as a variable
+
+        var height = scroll.height(); // Gets the height of the scroll div
+
+        var topAdj = -height - 30;
+        /* '-height' turns the height                   of the UL into a negative #,
+         * '- 50' subtracts an extra 50 pixels from the height of
+         * the div so that it moves the trail of the UL higher to
+         * the top of the div before the animation                ends
+         */
+
+        scroll.animate(
+          {
+            top: [topAdj, "linear"]
+          },
+          50000,
+          function() {
+            scroll.css("top", 250); //resets the top position of the Ul for the next cycle
+            scroller(); // Recalls the animation cycle to begin.
+          }
+        );
+      }
+    </script>
   </body>
 </html>

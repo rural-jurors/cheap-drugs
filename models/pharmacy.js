@@ -14,7 +14,7 @@ module.exports = function (sequelize, Sequelize) {
         }
     });
     Pharmacy.associate = function (models) {
-        Pharmacy.belongsTo(models.userProfile, {
+        Pharmacy.belongsTo(models.UserProfile, {
             foreignKey: {
                 allowNull: false
             }

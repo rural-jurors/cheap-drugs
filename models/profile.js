@@ -22,17 +22,6 @@ module.exports = function (sequelize, Sequelize) {
         }
 
     });
-    userProfile.associate = function (models) {
-        userProfile.hasMany(models.Search, {
-            onDelete: "cascade"
-        });
-
-        userProfile.associate = function (models) {
-            userProfile.hasMany(models.Pharmacy, {
-                onDelete: "cascade"
-            });
-        }
-    };
     return userProfile;
 };
 

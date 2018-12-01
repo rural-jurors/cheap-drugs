@@ -1,12 +1,12 @@
 module.exports = function (sequelize, Sequelize) {
-    const Search = sequelize.define("search", {
+    const Search = sequelize.define("Search", {
         drugName: {
             type: Sequelize.STRING,
             required: true
         }
     });
     Search.associate = function (models) {
-        Search.belongsTo(models.userProfile, {
+        Search.belongsTo(models.UserProfile, {
             foreignKey: {
                 allowNull: false
             }

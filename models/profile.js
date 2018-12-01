@@ -1,5 +1,5 @@
 module.exports = function (sequelize, Sequelize) {
-    const userProfile = sequelize.define("userProfile", {
+    const UserProfile = sequelize.define("UserProfile", {
         firstName: {
             type: Sequelize.STRING,
             required: true,
@@ -22,7 +22,7 @@ module.exports = function (sequelize, Sequelize) {
         }
 
     });
-    return userProfile;
+    return UserProfile;
 };
 
 // -- CREATE TABLE `userProfile` (

@@ -47,5 +47,5 @@
 * Generic vs. Brand name conventions
 * An admin page displaying active users
 
-###Link: http://cheapdrugs.herokuapp.com/
+##Link: http://cheapdrugs.herokuapp.com/
 

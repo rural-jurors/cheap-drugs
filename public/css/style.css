@@ -125,3 +125,20 @@ rect {
   margin-right: auto;
 }
 
+.warning-label {
+  margin-top:0px;
+  margin-bottom: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.warning-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+ul li {
+  list-style-type: circle;
+  display: list-item;
+}

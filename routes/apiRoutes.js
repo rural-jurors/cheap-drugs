@@ -54,12 +54,22 @@ module.exports = function (app) {
         console.log(req.body);
         console.log("The user signed up!");
         db.UserProfile.create({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                userPassword: req.body.userPassword,
-                zipcode: req.body.zipcode
-            })
-            .then(() => res.redirect('/home'));
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            userPassword: req.body.userPassword,
+            zipcode: req.body.zipcode
+        }).then(function () {
+            res.send({redirect: '/home'});
+        });
+    });
+
+    app.get("/api/admin/showUsers", function (req, res) {
+        console.log("showing all users who have signed up!");
+        db.UserProfile.findAll().then(users => res.json(users));
+    });
+
+    app.delete("/api/admin/deleteUser", function (req, res) {
+        db.UserProfile.destroy({where: {id: req.body.id}});
     });
 };

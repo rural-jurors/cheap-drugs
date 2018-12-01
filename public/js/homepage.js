@@ -2,7 +2,9 @@
 
 $(document).ready(function() {
   $(".dropdown-trigger").dropdown();
+  $('.modal').modal();
 });
+
 
 
 // $("#searchBtn").on("click", function(event) {

@@ -1,4 +1,5 @@
 let request = require("request-promise")
+var db = require("../models");
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -52,5 +53,13 @@ module.exports = function (app) {
     app.post("/api/signup", function (req, res) {
         console.log(req.body);
         console.log("The user signed up!");
+        db.UserProfile.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                userPassword: req.body.userPassword,
+                zipcode: req.body.zipcode
+            })
+            .then(() => res.redirect('/home'));
     });
 };

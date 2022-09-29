@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/rural-jurors/cheap-drugs#readme",
   "dependencies": {
-    "d3": "^5.7.0",
+    "d3": "^7.6.1",
     "express": "^4.16.4",
     "mysql2": "^1.6.4",
     "normalize": "^0.3.1",
